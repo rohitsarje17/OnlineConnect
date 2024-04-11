@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create or Join Meeting</title>
+    <link rel="stylesheet" href="public/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="public/Assets/css/style.css">
+</head>
+<body style="padding-top: 3.5rem;">
+    <nav class="navbar navbar-expand-md fixed-top">
+        <img src="public\Assets\images\logo.jpg" class="logo" alt="">
+        <a href="#" class="navbar-brand text-dark">Online Connect</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto"> <!-- Added ml-auto class here -->
+                <li class="nav-item sign-in display-center">
+                    <a style="color: white !important" href="#" class="nav-link btn btn-info btn-lg text-light font-weight-bold">Sign In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="jumbotron h-100 d-flex">
+            <div class="container w-50">
+                <h1 style="font-size: 3rem;">Premium video conferencing platform</h1>
+                <p style="font-size: 20px;">Experience seamless video conferencing with our premium platform. Whether you're hosting virtual meetings, online classes, or webinars, our platform offers the tools you need for successful collaboration.</p>
+                <p>Get started now and elevate your online communication experience.</p>
+                <ul class="display-center justify-content-start">
+                    <li>
+                        <button class="new-meeting btn btn-large text-light font-weight-bold display-center" style="background-color: #01796b;">
+                            <span class="material-symbols-outlined mr-2">
+                                video_call
+                                </span>
+                             Create a Meeting
+                        </button>
+                    </li>
+                    <li class="pl-3">
+                        <button class="btn btn-large text-dark btn-outline-secondary font-weight-bold display-center" style="background-color: white;">
+                            <span class="material-symbols-outlined mr-2">
+                                keyboard
+                                </span>
+                            <input type="text" placeholder="Enter a  meeting code " style="border: none; " class="enter-code">
+                        </button>
+                    </li>
+                    <li class="text-dark pl-2 font-weight-bold cursor-pointer join-action">
+                           Join
+                    </li>
+                </ul>
+            </div>
+            <div class="container w-50">
+                <img src="public\Assets\images\people.jpg" alt="people in meet" class="signin-image">
+            </div>
+        </div>
+    </main>
+    <footer >
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script>
+        $(function(){
+           $(document).on("click",".join-action",function(){
+             var join_value = $('.enter-code').val();
+             var meetingURL = window.location.origin+"?meetingID="+join_value;
+             window.location.replace(meetingURL);
+           })
+            $(document).on("click",".new-meeting",function(){
+            
+             var eight_d_value = Math.floor(Math.random()*100000000);
+             var meetingURL = window.location.origin+"?meetingID="+eight_d_value;
+             window.location.replace(meetingURL);
+           })
+        })
+    </script>
+</body>
+</html>
